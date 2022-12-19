@@ -13,14 +13,30 @@ function writePassword() {
   var includeNumbers = window.confirm("Include numbers?");
   var includeSpecial = window.confirm("Include special characters?");
 }
-  // Write password to the #password input
-//function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+ // Validate the user's input
+ if (passwordLength < 8 || passwordLength > 128) { 
+  window.alert("Password length must be between 8 and 10 characters!");
+  return; 
+}
+if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial) {
+  window.alert("You must select at least one character type to include in the password!");
+  return;
+}
 
+ 
+  
+
+//Generate password
+  var password = generatePassword(passwordLength, includeLowercase, includeUppercase, includeSpecial, includeNumbers);
+  
+  //Display Genrated password
+  var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
-//}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+//Return to genorated password
+return password;
+
+
