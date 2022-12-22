@@ -23,7 +23,17 @@ if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial
   return;
 }
 
- 
+ //add the event listener
+ generateBtn.addEventListener("click", writePassword);
+
+ //Generate Password function
+ function generatePassword(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSpecial) {
+  var characterSet = "";
+  if (includeLowercase) {
+    characterSet += "abcdefghijklmnopqrstuvwxyz";
+  }
+  
+ }
   
 
 //Generate password
