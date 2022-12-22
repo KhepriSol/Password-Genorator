@@ -32,7 +32,15 @@ if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial
   if (includeLowercase) {
     characterSet += "abcdefghijklmnopqrstuvwxyz";
   }
-  
+  if (includeUppercase) {
+   characterSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+  if (includeNumbers) {
+
+   characterSet += "0123456789"; }
+   if (includeSpecial) {
+    characterSet += "!@#$%^&*()_+-=[]{}|;':,.<>?";
+   }
  }
   
 
